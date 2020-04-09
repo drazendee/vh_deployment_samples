@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <p>{% block title %}Start by uploading a metadata file (only .json files allowed){% endblock %}</p>
+{% endblock %}
+
+{% block content %}
+  <form method="post" enctype=multipart/form-data>
+    <label for="metadata">Input metadata: </label>
+    <input type="file" required name="metadata" accept=".json" id="metadata" />
+    <br />
+    <br />
+    <input type="submit" value="Make a graph" />
+  </form>
+  {% if image %}
+
+  <img src="data:image/png;charset=ascii;base64,{{image}}" alt="Image Placeholder" />
+  {% endif %} 
+{% endblock %}

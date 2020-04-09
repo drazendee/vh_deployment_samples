@@ -1,0 +1,9 @@
+* {
+    font-family: 'Verdana';
+    color: #02373f
+}
+input[type=submit] {
+    padding: 10px;
+    background: #02373f;
+    color: #ffffff;
+}
