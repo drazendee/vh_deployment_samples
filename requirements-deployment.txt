@@ -1,1 +1,5 @@
 fiftyone
+valohai-utils
+tensorflow
+Pillow
+python-multipart

@@ -3,3 +3,23 @@
     image: python:3.10
     server-command: python3 dashboard.py
     port: 5151
+
+- endpoint:
+    name: digits
+    image: tiangolo/uvicorn-gunicorn-fastapi:python3.7
+    server-command: uvicorn realtime:app --host 0.0.0.0 --port 8000
+    files:
+        - name: model
+          path: model.h5
+
+- step:
+    name: Batch Inference
+    image: tensorflow/tensorflow:2.4.1
+    command:
+    - pip install pillow valohai-utils
+    - python batch_inference.py
+    inputs:
+    - name: model
+      default: s3://valohai-public-files/tutorials/batch-inference/image-batch-inference/model.h5
+    - name: images
+      default: s3://valohai-public-files/tutorials/batch-inference/image-batch-inference/images.zip
