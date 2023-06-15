@@ -1,0 +1,5 @@
+- endpoint:
+    name: dashboard
+    image: someimage
+    server-command: python3 dashboard.py
+    port: 5151
