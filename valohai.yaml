@@ -1,7 +1,7 @@
 - endpoint:
     name: dashboard
-    image: python:3.10
-    server-command: sudo apt-get install libssl-dev -y && python3 dashboard.py
+    image: drazend/voxel-sample:0.0.1
+    server-command: python3 dashboard.py
     port: 5151
 
 - endpoint:
