@@ -1,6 +1,6 @@
 - endpoint:
     name: dashboard
-    image: drazend/voxel-sample:0.0.1
+    image: voxel51/fiftyone
     server-command: python3 dashboard.py
     port: 5151
 
